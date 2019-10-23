@@ -2,10 +2,25 @@
 #include <stdlib.h>
 #include "functions.h"
 
-struct Node * insert_front(struct Node *node, int i) {
+void print_list(struct Node *list) {
+  if (list == NULL)
+    printf("[ ]");
+
+  printf("[ ");
+
+  struct Node *current = list;
+  while (current -> next != NULL) {
+    printf("%d ", current -> i);
+    current = current -> next;
+  }
+
+  printf("]");
+}
+
+struct Node * insert_front(struct Node *list, int i) {
   struct Node *front = malloc(sizeof(struct Node));
   front -> i = i;
-  front -> next = node;
+  front -> next = list;
 
   return front;
 }
