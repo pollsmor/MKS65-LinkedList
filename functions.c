@@ -40,3 +40,29 @@ struct Node * free_list(struct Node *list) {
 
   return list;
 }
+
+struct Node * removeNode(struct Node *front, int data) {
+  struct Node *prev;
+  struct Node *current = front;
+  while (current != NULL) {
+    if (current -> i == data) {
+      if (prev == NULL) { //case where the first element is removed - start of list is now the next struct
+        struct Node *next = current -> next;
+        free(current);
+        return next;
+      }
+
+      printf("[%d] Data found; the node containing this data will now be freed. \n", current -> i);
+      prev -> next = current -> next;
+      free(current);
+      return front;
+    }
+
+    prev = current;
+    current = current -> next;
+  }
+
+  //Couldn't find the data
+  printf("Data not found; nothing has been changed. \n");
+  return front;
+}

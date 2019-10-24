@@ -23,6 +23,24 @@ int main() {
   print_list(n1);
   printf("\n");
 
+  printf("Removing 0 from list: \n");
+  n1 = removeNode(n1, 0);
+  printf("Printing list: \n");
+  print_list(n1);
+  printf("\n");
+
+  printf("Removing 9 from list: \n");
+  n1 = removeNode(n1, 9);
+  printf("Printing list: \n");
+  print_list(n1);
+  printf("\n");
+
+  printf("Removing 4 from list: \n");
+  n1 = removeNode(n1, 4);
+  printf("Printing list: \n");
+  print_list(n1);
+  printf("\n");
+
   printf("Freeing list. \n");
   n1 = free_list(n1);
   printf("Printing list: \n");
