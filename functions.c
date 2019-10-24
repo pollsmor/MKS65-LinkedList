@@ -42,11 +42,12 @@ struct Node * free_list(struct Node *list) {
 }
 
 struct Node * removeNode(struct Node *front, int data) {
-  struct Node *prev;
+  struct Node *prev = NULL;
   struct Node *current = front;
   while (current != NULL) {
     if (current -> i == data) {
       if (prev == NULL) { //case where the first element is removed - start of list is now the next struct
+        printf("Data found; freeing the first node and setting the front to the next node. \n");
         struct Node *next = current -> next;
         free(current);
         return next;
