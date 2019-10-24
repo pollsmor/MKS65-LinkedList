@@ -3,13 +3,15 @@
 #include "functions.h"
 
 void print_list(struct Node *list) {
-  if (list == NULL)
+  if (list == NULL) { //empty list
     printf("[ ]");
+    return;
+  }
 
   printf("[ ");
 
   struct Node *current = list;
-  while (current -> next != NULL) {
+  while (current != NULL) {
     printf("%d ", current -> i);
     current = current -> next;
   }
