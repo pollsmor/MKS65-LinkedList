@@ -8,7 +8,7 @@ int main() {
   print_list(n1);
   printf("\n");
 
-  printf("Adding #s 0-9. \n");
+  printf("Adding #s 0-9 to list. \n");
   n1 = insert_front(n1, 0);
   n1 = insert_front(n1, 1);
   n1 = insert_front(n1, 2);
@@ -23,7 +23,11 @@ int main() {
   print_list(n1);
   printf("\n");
 
-  printf("Freeing list.");
+  printf("Freeing list. \n");
+  n1 = free_list(n1);
+  printf("Printing list: \n");
+  print_list(n1);
+  printf("\n");
 
   return 0;
 }

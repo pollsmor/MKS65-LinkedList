@@ -26,3 +26,17 @@ struct Node * insert_front(struct Node *list, int i) {
 
   return front;
 }
+
+struct Node * free_list(struct Node *list) {
+  struct Node *current = list;
+  while (current != NULL) {
+    struct Node *next = current -> next;
+    printf("Freeing node: %d \n", current -> i);
+    free(current);
+    current = next;
+  }
+
+  list = NULL;
+
+  return list;
+}
