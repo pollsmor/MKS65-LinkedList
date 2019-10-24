@@ -19,7 +19,7 @@ int main() {
   n1 = insert_front(n1, 7);
   n1 = insert_front(n1, 8);
   n1 = insert_front(n1, 9);
-  printf("Printing list: ");
+  printf("Printing list: \n");
   print_list(n1);
   printf("\n");
 
